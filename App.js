@@ -3,6 +3,7 @@ import { useColorScheme } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import {
+  CounterScreen,
   HomeScreen,
   NotificationsScreen,
   ProductDetailsScreen,
@@ -20,7 +21,7 @@ export default function App() {
   return (
     <NavigationContainer theme={scheme === "dark" ? DarkValues : LightValues}>
       <Drawer.Navigator
-        initialRouteName="Home"
+        initialRouteName="Counter"
         screenOptions={screenOptions}
         drawerContent={(props) => {
           return <DrawerContent {...props} />;
@@ -29,6 +30,7 @@ export default function App() {
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
         <Drawer.Screen name="ProductDetails" component={ProductDetailsScreen} />
+        <Drawer.Screen name="Counter" component={CounterScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
